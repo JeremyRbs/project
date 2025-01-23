@@ -31,6 +31,7 @@ pipeline {
         stage('Start minikube') {
             steps {
                 script {
+                    bat 'minikube ssh -- sudo swapoff -a'
                     bat 'minikube start --driver=docker'
                 }
             }
